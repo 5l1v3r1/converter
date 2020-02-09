@@ -1,0 +1,28 @@
+#!/bin/python3
+import os
+import sys
+import colorama
+import progressbar
+def main():
+ path=get_path()
+ type=get_type()
+ convert(path,type)
+ print("DONE")
+ exit(1)
+def get_path():
+ try:
+  file=sys.argv[1]
+ except:
+  print("Usage: python3 con.py <file_path> <type_to_convert>")
+  exit()
+ return file
+def get_type():
+ try:
+  type=sys.argv[2]
+ except:
+  print("Usage: python3 con.py <file_path> <type_to_convert>")
+  exit()
+ return type
+def convert(path,type):
+  os.rename(path,path[:path.find(".")]+"."+type)
+main()
