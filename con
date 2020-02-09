@@ -1,8 +1,6 @@
 #!/bin/python3
 import os
 import sys
-import colorama
-import progressbar
 def main():
  path=get_path()
  type=get_type()
